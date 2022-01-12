@@ -1,0 +1,31 @@
+name: automated_testing_framework_plugin_github
+description: Library to use provide github support for test hosting for the Automated Testing Framework.
+homepage: https://github.com/peiffer-innovations/automated_testing_framework_plugin_github
+
+version: 1.0.0
+
+environment:
+  sdk: ">=2.15.0 <3.0.0"
+
+dependencies:
+  automated_testing_framework: ^3.2.0
+  convert: ^3.0.1
+  flutter:
+    sdk: flutter
+  form_validation: ^2.1.0+1
+  json_class: ^2.1.2+3
+  logging: ^1.0.2
+  static_translations: ^2.1.0+1
+
+# dependency_overrides:
+#   automated_testing_framework:
+#     path: ../automated_testing_framework
+#   automated_testing_framework_models:
+#     path: ../automated_testing_framework_models
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
