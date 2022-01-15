@@ -1,0 +1,76 @@
+{
+  "active": true,
+  "name": "Double Tap",
+  "suiteName": "Core",
+  "steps": [
+    {
+      "id": "tap",
+      "values": {
+        "testableId": "test_page_Gestures"
+      }
+    },
+    {
+      "id": "assert_value",
+      "values": {
+        "testableId": "action_text",
+        "value": "No Action",
+        "equals": "true"
+      }
+    },
+    {
+      "id": "screenshot"
+    },
+    {
+      "id": "double_tap",
+      "values": {
+        "testableId": "interactive_button"
+      }
+    },
+    {
+      "id": "assert_value",
+      "values": {
+        "testableId": "action_text",
+        "value": "Double Tap",
+        "equals": "true"
+      }
+    },
+    {
+      "id": "screenshot"
+    },
+    {
+      "id": "long_press",
+      "values": {
+        "testableId": "interactive_button"
+      }
+    },
+    {
+      "id": "assert_value",
+      "values": {
+        "testableId": "action_text",
+        "value": "Long Press",
+        "equals": "true"
+      }
+    },
+    {
+      "id": "screenshot"
+    },
+    {
+      "id": "tap",
+      "values": {
+        "testableId": "interactive_button"
+      }
+    },
+    {
+      "id": "assert_value",
+      "values": {
+        "testableId": "action_text",
+        "value": "Tap",
+        "equals": "true"
+      }
+    },
+    {
+      "id": "screenshot"
+    }
+  ],
+  "version": 0
+}

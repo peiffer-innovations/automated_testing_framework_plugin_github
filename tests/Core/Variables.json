@@ -1,0 +1,97 @@
+{
+  "active": true,
+  "name": "Variables",
+  "steps": [
+    {
+      "id": "tap",
+      "values": {
+        "testableId": "test_page_Buttons"
+      }
+    },
+    {
+      "id": "set_global_variable",
+      "values": {
+        "value": "button_twenty",
+        "type": "String",
+        "variableName": "button"
+      }
+    },
+    {
+      "id": "set_variable",
+      "values": {
+        "type": "String",
+        "value": "button_thirty",
+        "variableName": "button"
+      }
+    },
+    {
+      "id": "scroll_until_visible",
+      "values": {
+        "testableId": "{{button}}",
+        "increment": "200"
+      }
+    },
+    {
+      "id": "set_variable",
+      "values": {
+        "type": "String",
+        "value": "button_sixty",
+        "variableName": "button"
+      }
+    },
+    {
+      "id": "scroll_until_visible",
+      "values": {
+        "testableId": "{{button}}",
+        "increment": "200"
+      }
+    },
+    {
+      "id": "scroll_until_visible",
+      "values": {
+        "testableId": "button_one",
+        "increment": "-200"
+      }
+    },
+    {
+      "id": "remove_variable",
+      "values": {
+        "variableName": "button"
+      }
+    },
+    {
+      "id": "scroll_until_visible",
+      "values": {
+        "testableId": "{{button}}",
+        "increment": "200"
+      }
+    },
+    {
+      "id": "set_variable",
+      "values": {
+        "value": "button_fifty",
+        "type": "String",
+        "variableName": "button"
+      }
+    },
+    {
+      "id": "scroll_until_visible",
+      "values": {
+        "testableId": "{{button}}",
+        "increment": "200"
+      }
+    },
+    {
+      "id": "remove_global_variable",
+      "values": {
+        "variableName": "button"
+      }
+    },
+    {
+      "id": "go_back"
+    }
+  ],
+  "suiteName": "Core",
+  "timestamp": 1624328016897,
+  "version": 0
+}

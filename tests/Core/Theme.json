@@ -1,0 +1,164 @@
+{
+  "active": true,
+  "name": "Theme",
+  "suiteName": "Core",
+  "steps": [
+    {
+      "id": "tap",
+      "values": {
+        "testableId": "theme_switcher"
+      }
+    },
+    {
+      "id": "screenshot"
+    },
+    {
+      "id": "tap",
+      "values": {
+        "testableId": "test_page_Buttons"
+      }
+    },
+    {
+      "id": "screenshot"
+    },
+    {
+      "id": "scroll_until_visible",
+      "values": {
+        "testableId": "button_one hundred",
+        "increment": "200"
+      }
+    },
+    {
+      "id": "tap",
+      "values": {
+        "testableId": "button_one hundred"
+      }
+    },
+    {
+      "id": "go_back"
+    },
+    {
+      "id": "go_back"
+    },
+    {
+      "id": "tap",
+      "values": {
+        "testableId": "test_page_Dropdown"
+      }
+    },
+    {
+      "id": "screenshot"
+    },
+    {
+      "id": "scroll_until_visible",
+      "values": {
+        "testableId": "dropdown_99",
+        "increment": "200"
+      }
+    },
+    {
+      "id": "go_back"
+    },
+    {
+      "id": "tap",
+      "values": {
+        "testableId": "test_page_Edit Text"
+      }
+    },
+    {
+      "id": "screenshot"
+    },
+    {
+      "id": "scroll_until_visible",
+      "values": {
+        "testableId": "edit_text_99",
+        "increment": "200"
+      }
+    },
+    {
+      "id": "go_back"
+    },
+    {
+      "id": "tap",
+      "values": {
+        "testableId": "theme_switcher"
+      }
+    },
+    {
+      "id": "screenshot"
+    },
+    {
+      "id": "tap",
+      "values": {
+        "testableId": "test_page_Buttons"
+      }
+    },
+    {
+      "id": "screenshot"
+    },
+    {
+      "id": "scroll_until_visible",
+      "values": {
+        "testableId": "button_one hundred",
+        "increment": "200"
+      }
+    },
+    {
+      "id": "tap",
+      "values": {
+        "testableId": "button_one hundred"
+      }
+    },
+    {
+      "id": "go_back"
+    },
+    {
+      "id": "go_back"
+    },
+    {
+      "id": "tap",
+      "values": {
+        "testableId": "test_page_Dropdown"
+      }
+    },
+    {
+      "id": "screenshot"
+    },
+    {
+      "id": "scroll_until_visible",
+      "values": {
+        "testableId": "dropdown_99",
+        "increment": "200"
+      }
+    },
+    {
+      "id": "go_back"
+    },
+    {
+      "id": "tap",
+      "values": {
+        "testableId": "test_page_Edit Text"
+      }
+    },
+    {
+      "id": "screenshot"
+    },
+    {
+      "id": "scroll_until_visible",
+      "values": {
+        "testableId": "edit_text_99",
+        "increment": "200"
+      }
+    },
+    {
+      "id": "go_back"
+    },
+    {
+      "id": "tap",
+      "values": {
+        "testableId": "theme_switcher"
+      }
+    }
+  ],
+  "version": 1
+}

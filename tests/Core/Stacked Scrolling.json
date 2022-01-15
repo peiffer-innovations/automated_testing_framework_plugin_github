@@ -1,0 +1,40 @@
+{
+  "active": true,
+  "name": "StackedScrolling",
+  "suiteName": "Core",
+  "steps": [
+    {
+      "id": "tap",
+      "values": {
+        "testableId": "test_page_Stacked Scroll Page"
+      }
+    },
+    {
+      "id": "screenshot"
+    },
+    {
+      "id": "scroll_until_visible",
+      "values": {
+        "testableId": "widget_70_0",
+        "increment": "200",
+        "timeout": "30"
+      }
+    },
+    {
+      "id": "screenshot"
+    },
+    {
+      "id": "scroll_until_visible",
+      "values": {
+        "testableId": "widget_70_35",
+        "increment": "200",
+        "scrollableId": "inner_scroll_70",
+        "timeout": "30"
+      }
+    },
+    {
+      "id": "screenshot"
+    }
+  ],
+  "version": 1
+}

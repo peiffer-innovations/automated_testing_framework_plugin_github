@@ -1,0 +1,69 @@
+{
+  "name": "Failure",
+  "suiteName": "Core",
+  "steps": [
+    {
+      "id": "tap",
+      "values": {
+        "testableId": "test_page_Buttons"
+      }
+    },
+    {
+      "id": "scroll_until_visible",
+      "values": {
+        "testableId": "button_eighty",
+        "increment": "200"
+      }
+    },
+    {
+      "id": "tap",
+      "values": {
+        "testableId": "button_eighty"
+      }
+    },
+    {
+      "id": "assert_value",
+      "values": {
+        "testableId": "center_text",
+        "value": "ninety",
+        "equals": "true"
+      }
+    },
+    {
+      "id": "go_back",
+      "image": null,
+      "values": {}
+    },
+    {
+      "id": "scroll_until_visible",
+      "values": {
+        "testableId": "button_one",
+        "increment": "-200"
+      }
+    },
+    {
+      "id": "tap",
+      "values": {
+        "testableId": "button_one"
+      }
+    },
+    {
+      "id": "assert_value",
+      "values": {
+        "testableId": "center_text",
+        "value": "one",
+        "equals": "true"
+      }
+    },
+    {
+      "id": "go_back",
+      "image": null,
+      "values": {}
+    },
+    {
+      "id": "go_back",
+      "image": null,
+      "values": {}
+    }
+  ]
+}

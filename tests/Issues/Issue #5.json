@@ -1,0 +1,60 @@
+{
+  "name": "Issue #5",
+  "suiteName": "Issues",
+  "steps": [
+    {
+      "id": "tap",
+      "values": {
+        "testableId": "test_page_Issue 5"
+      }
+    },
+    {
+      "id": "tap",
+      "image": null,
+      "values": {
+        "testableId": "fab"
+      }
+    },
+    {
+      "id": "assert_value",
+      "image": null,
+      "values": {
+        "testableId": "text_value",
+        "value": "1",
+        "equals": "true"
+      }
+    },
+    {
+      "id": "tap",
+      "image": null,
+      "values": {
+        "testableId": "fab"
+      }
+    },
+    {
+      "id": "assert_value",
+      "image": null,
+      "values": {
+        "testableId": "text_value",
+        "value": "2",
+        "equals": "true"
+      }
+    },
+    {
+      "id": "tap",
+      "image": null,
+      "values": {
+        "testableId": "fab"
+      }
+    },
+    {
+      "id": "assert_value",
+      "image": null,
+      "values": {
+        "testableId": "text_value",
+        "value": "3",
+        "equals": "true"
+      }
+    }
+  ]
+}

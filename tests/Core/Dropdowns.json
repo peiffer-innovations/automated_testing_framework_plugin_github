@@ -1,0 +1,170 @@
+{
+  "active": true,
+  "name": "Dropdowns",
+  "suiteName": "Core",
+  "steps": [
+    {
+      "id": "tap",
+      "values": {
+        "testableId": "test_page_Dropdown"
+      }
+    },
+    {
+      "id": "screenshot"
+    },
+    {
+      "id": "scroll_until_visible",
+      "values": {
+        "testableId": "dropdown_93",
+        "increment": "200"
+      }
+    },
+    {
+      "id": "screenshot"
+    },
+    {
+      "id": "set_value",
+      "values": {
+        "testableId": "dropdown_93",
+        "type": "String",
+        "value": "15"
+      }
+    },
+    {
+      "id": "assert_error",
+      "values": {
+        "error": "Pick a number at least: 93",
+        "testableId": "dropdown_93",
+        "equals": "true"
+      }
+    },
+    {
+      "id": "screenshot"
+    },
+    {
+      "id": "set_value",
+      "values": {
+        "testableId": "dropdown_93",
+        "value": "95",
+        "type": "String"
+      }
+    },
+    {
+      "id": "assert_value",
+      "values": {
+        "testableId": "dropdown_93",
+        "value": "95",
+        "equals": "true"
+      }
+    },
+    {
+      "id": "assert_error",
+      "values": {
+        "testableId": "dropdown_93",
+        "equals": "true"
+      }
+    },
+    {
+      "id": "screenshot"
+    },
+    {
+      "id": "scroll_until_visible",
+      "values": {
+        "testableId": "dropdown_7",
+        "increment": "-200"
+      }
+    },
+    {
+      "id": "screenshot"
+    },
+    {
+      "id": "set_value",
+      "values": {
+        "testableId": "dropdown_7",
+        "type": "String",
+        "value": "10"
+      }
+    },
+    {
+      "id": "assert_value",
+      "values": {
+        "testableId": "dropdown_7",
+        "value": "10",
+        "equals": "true"
+      }
+    },
+    {
+      "id": "assert_error",
+      "values": {
+        "testableId": "dropdown_7",
+        "equals": "true"
+      }
+    },
+    {
+      "id": "screenshot"
+    },
+    {
+      "id": "set_value",
+      "values": {
+        "testableId": "dropdown_7",
+        "value": "1",
+        "type": "String"
+      }
+    },
+    {
+      "id": "assert_value",
+      "values": {
+        "testableId": "dropdown_7",
+        "value": "1",
+        "equals": "true"
+      }
+    },
+    {
+      "id": "assert_error",
+      "values": {
+        "error": "Pick a number at least: 7",
+        "testableId": "dropdown_7",
+        "equals": "true"
+      }
+    },
+    {
+      "id": "screenshot"
+    },
+    {
+      "id": "go_back"
+    },
+    {
+      "id": "tap",
+      "values": {
+        "testableId": "test_page_Dropdown"
+      }
+    },
+    {
+      "id": "assert_value",
+      "values": {
+        "testableId": "dropdown_4",
+        "equals": "true"
+      }
+    },
+    {
+      "id": "set_value",
+      "values": {
+        "testableId": "dropdown_4",
+        "type": "String",
+        "value": "4"
+      }
+    },
+    {
+      "id": "assert_value",
+      "values": {
+        "testableId": "dropdown_4",
+        "value": "4",
+        "equals": "true"
+      }
+    },
+    {
+      "id": "go_back"
+    }
+  ],
+  "version": 1
+}

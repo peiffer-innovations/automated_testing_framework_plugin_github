@@ -1,0 +1,90 @@
+{
+  "active": true,
+  "name": "Buttons",
+  "steps": [
+    {
+      "id": "comment",
+      "values": {
+        "comment": "Opening the buttons page"
+      }
+    },
+    {
+      "id": "tap",
+      "values": {
+        "testableId": "test_page_Buttons"
+      }
+    },
+    {
+      "id": "comment",
+      "values": {
+        "comment": "Looking for the correct button."
+      }
+    },
+    {
+      "id": "scroll_until_visible",
+      "values": {
+        "testableId": "button_eighty",
+        "increment": "200"
+      }
+    },
+    {
+      "id": "screenshot"
+    },
+    {
+      "id": "tap",
+      "values": {
+        "testableId": "button_eighty"
+      }
+    },
+    {
+      "id": "assert_value",
+      "values": {
+        "testableId": "center_text",
+        "value": "eighty",
+        "equals": "true"
+      }
+    },
+    {
+      "id": "screenshot"
+    },
+    {
+      "id": "go_back"
+    },
+    {
+      "id": "scroll_until_visible",
+      "values": {
+        "testableId": "button_one",
+        "increment": "-200"
+      }
+    },
+    {
+      "id": "screenshot"
+    },
+    {
+      "id": "tap",
+      "values": {
+        "testableId": "button_one"
+      }
+    },
+    {
+      "id": "assert_value",
+      "values": {
+        "testableId": "center_text",
+        "value": "one",
+        "equals": "true"
+      }
+    },
+    {
+      "id": "screenshot"
+    },
+    {
+      "id": "go_back"
+    },
+    {
+      "id": "go_back"
+    }
+  ],
+  "suiteName": "Core",
+  "timestamp": 1618583170572,
+  "version": 1
+}
