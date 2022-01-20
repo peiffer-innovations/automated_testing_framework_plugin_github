@@ -10,6 +10,8 @@ environment:
 dependencies:
   automated_testing_framework_models: ^2.0.8+2
   convert: ^3.0.1
+  flutter:
+    sdk: flutter
   form_validation: ^2.1.0+1
   github: ^9.0.0
   json_class: ^2.1.2+3
