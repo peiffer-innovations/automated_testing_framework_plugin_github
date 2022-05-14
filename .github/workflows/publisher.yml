@@ -4,7 +4,8 @@ on:
   push:
     branches: [main]
     paths:
-      - .github/workflows/publisher.yaml
+      - .github/workflows/publisher.yml
+      - example/pubspec.yml
       - lib/**
       - pubspec.yaml
 
