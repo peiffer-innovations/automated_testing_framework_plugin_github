@@ -1,43 +1,38 @@
-name: example
-description: Example project for the Automated Testing Framework.
+name: 'example'
+description: 'Example project for the Automated Testing Framework.'
+publish_to: 'none'
+version: '1.0.0+2'
 
-publish_to: "none"
+environment: 
+  sdk: '>=2.17.0 <3.0.0'
 
-version: 1.0.0+1
+dependencies: 
+  automated_testing_framework_example: '^2.2.4+2'
+  automated_testing_framework_plugin_images: '^4.0.0'
+  flutter: 
+    sdk: 'flutter'
 
-environment:
-  sdk: ">=2.17.0 <3.0.0"
+dependency_overrides: 
+  automated_testing_framework_plugin_github: 
+    path: '../'
 
-dependencies:
-  automated_testing_framework_example: ^2.2.4+1
-  automated_testing_framework_plugin_images: ^4.0.0
-  flutter:
-    sdk: flutter
 
-dependency_overrides:
-  # automated_testing_framework:
-  #   path: ../../automated_testing_framework
-  # automated_testing_framework_example:
-  #   path: ../../automated_testing_framework_example
-  automated_testing_framework_plugin_github:
-    path: ../
+dev_dependencies: 
+  flutter_launcher_icons: '^0.9.2'
+  flutter_test: 
+    sdk: 'flutter'
 
-dev_dependencies:
-  flutter_launcher_icons: ^0.9.2
-  flutter_test:
-    sdk: flutter
-
-flutter_icons:
+flutter_icons: 
   android: true
   ios: true
-  image_path: "assets-src/icon.png"
+  image_path: 'assets-src/icon.png'
 
-flutter_native_splash:
-  image: assets-src/splash.png
-  color: "212121"
+flutter_native_splash: 
+  image: 'assets-src/splash.png'
+  color: '212121'
   android_disable_fullscreen: true
 
-flutter:
+flutter: 
   uses-material-design: true
-  assets:
-    - assets/secrets/
+  assets: 
+    - 'assets/secrets/'
