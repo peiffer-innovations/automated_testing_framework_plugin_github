@@ -39,7 +39,7 @@ android {
     defaultConfig {
         applicationId "com.pi.atf.plugin.github.example"
         minSdkVersion 21
-        targetSdkVersion 29
+        targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
