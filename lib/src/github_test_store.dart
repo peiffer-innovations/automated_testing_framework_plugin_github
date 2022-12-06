@@ -49,16 +49,16 @@ class GithubTestStore {
     String? suiteName,
     required String testName,
   }) {
-    var suitePrefix = suiteName?.isNotEmpty == true
+    final suitePrefix = suiteName?.isNotEmpty == true
         ? '${suiteName!.replaceAll('/', '-')}/'
         : '';
     return '${deviceInfo.appIdentifier}/${suitePrefix}${testName.replaceAll('/', '-')}/${deviceInfo.os}/${deviceInfo.systemVersion}/${deviceInfo.model}/${deviceInfo.device}/${deviceInfo.orientation}/${deviceInfo.pixels?.height}x${deviceInfo.pixels?.width}';
   }
 
   static String _createGoldenImageIdFromReport(TestReport report) {
-    var suiteName = report.suiteName;
-    var testName = report.name;
-    var deviceInfo = report.deviceInfo;
+    final suiteName = report.suiteName;
+    final testName = report.name;
+    final deviceInfo = report.deviceInfo;
 
     return _createGoldenImageId(
       deviceInfo: deviceInfo ?? TestDeviceInfo.unknown(),
@@ -72,19 +72,19 @@ class GithubTestStore {
   /// will throw an exception on failure.
   Future<void> goldenImageWriter(TestReport report) async {
     await _loadData();
-    var actualPath = goldenImagesPath.startsWith('/')
+    final actualPath = goldenImagesPath.startsWith('/')
         ? goldenImagesPath.substring(1)
         : goldenImagesPath;
 
-    var goldenId = _createGoldenImageIdFromReport(report);
+    final goldenId = _createGoldenImageIdFromReport(report);
 
-    var data = <String, String>{};
+    final data = <String, String>{};
     for (var image in report.images) {
       if (image.goldenCompatible == true) {
         data[image.id] = image.hash;
       }
     }
-    var golden = GoldenTestImages(
+    final golden = GoldenTestImages(
       deviceInfo: report.deviceInfo!,
       goldenHashes: data,
       suiteName: report.suiteName,
@@ -93,11 +93,11 @@ class GithubTestStore {
     );
 
     const batchSize = 10;
-    var batch = <Future>[];
+    final batch = <Future>[];
 
-    var hashes = <String>{};
+    final hashes = <String>{};
 
-    var images = List.from(report.images);
+    final images = List.from(report.images);
 
     images.removeWhere((image) {
       var found = false;
@@ -116,12 +116,12 @@ class GithubTestStore {
       if (image.goldenCompatible) {
         if (!hashes.contains(image.hash)) {
           hashes.add(image.hash);
-          var path = '$actualPath/$goldenId/${image.hash}.png';
-          var entry = _tree.entries!.where((e) => e.path == path);
+          final path = '$actualPath/$goldenId/${image.hash}.png';
+          final entry = _tree.entries!.where((e) => e.path == path);
 
           if (entry.isNotEmpty) {
-            var first = entry.first;
-            var hash1 = hex.encode(Digest('SHA-1').process(image.image!));
+            final first = entry.first;
+            final hash1 = hex.encode(Digest('SHA-1').process(image.image!));
 
             if (first.sha == hash1) {
               // Contents are the same, don't bother updating it.
@@ -164,30 +164,30 @@ class GithubTestStore {
     int? testVersion,
   }) async {
     await _loadData();
-    var goldenId = GoldenTestImages.createId(
+    final goldenId = GoldenTestImages.createId(
       deviceInfo: deviceInfo,
       suiteName: suiteName,
       testName: testName,
     );
-    var actualPath = goldenImagesPath.startsWith('/')
+    final actualPath = goldenImagesPath.startsWith('/')
         ? goldenImagesPath.substring(1)
         : goldenImagesPath;
     GoldenTestImages? golden;
     if (_currentGoldenTestImages?.id == goldenId) {
       golden = _currentGoldenTestImages;
     } else {
-      var name = '$actualPath/$goldenId.json';
-      var entry = _tree.entries!.where((e) => e.path == name);
+      final name = '$actualPath/$goldenId.json';
+      final entry = _tree.entries!.where((e) => e.path == name);
 
       if (entry.isNotEmpty) {
-        var response = await _github.repositories.getContents(
+        final response = await _github.repositories.getContents(
           slug,
           _encodeGitPath(actualPath),
         );
 
         if (response.file?.content != null) {
-          var data = utf8.decode(base64.decode(response.file!.content!));
-          var goldenJson = json.decode(data);
+          final data = utf8.decode(base64.decode(response.file!.content!));
+          final goldenJson = json.decode(data);
           golden = GoldenTestImages.fromDynamic(goldenJson);
           _currentGoldenTestImages = golden;
         }
@@ -196,11 +196,11 @@ class GithubTestStore {
 
     Uint8List? image;
     if (golden != null) {
-      var hash = golden.goldenHashes![imageId];
-      var path = '$actualPath/$goldenId/$hash.png';
-      var entry = _tree.entries!.where((e) => e.path == path);
+      final hash = golden.goldenHashes![imageId];
+      final path = '$actualPath/$goldenId/$hash.png';
+      final entry = _tree.entries!.where((e) => e.path == path);
       if (entry.isNotEmpty) {
-        var response = await _github.repositories.getContents(
+        final response = await _github.repositories.getContents(
           slug,
           _encodeGitPath(path),
         );
@@ -221,39 +221,39 @@ class GithubTestStore {
     String? suiteName,
   }) async {
     await _loadData();
-    var results = <PendingTest>[];
+    final results = <PendingTest>[];
 
     try {
-      var actualTestsPath =
+      final actualTestsPath =
           testsPath.startsWith('/') ? testsPath.substring(1) : testsPath;
 
-      var tests = _tree.entries!.where(
+      final tests = _tree.entries!.where(
         (entry) =>
             (actualTestsPath.isEmpty ||
                 entry.path?.startsWith(actualTestsPath) == true) &&
             entry.path!.endsWith('.json'),
       );
 
-      var batchSize = 10;
-      var batch = <Future>[];
+      final batchSize = 10;
+      final batch = <Future>[];
 
       for (var test in tests) {
         batch.add(
           Future.microtask(() async {
-            var encodedPath = _encodeGitPath(test.path!);
+            final encodedPath = _encodeGitPath(test.path!);
             try {
-              var contents = await _github.repositories.getContents(
+              final contents = await _github.repositories.getContents(
                 slug,
                 encodedPath,
                 ref: branch,
               );
 
-              var body = utf8.decode(
+              final body = utf8.decode(
                 base64.decode(
                   contents.file!.content!.replaceAll('\n', ''),
                 ),
               );
-              var fullTest = Test.fromDynamic(json.decode(body));
+              final fullTest = Test.fromDynamic(json.decode(body));
               results.add(
                 PendingTest.memory(fullTest),
               );
@@ -297,11 +297,11 @@ class GithubTestStore {
     var result = false;
 
     try {
-      var actualTestsPath =
+      final actualTestsPath =
           testsPath.startsWith('/') ? testsPath.substring(1) : testsPath;
 
-      var version = test.version + 1;
-      var testData = test
+      final version = test.version + 1;
+      final testData = test
           .copyWith(
             steps: test.steps
                 .map(
@@ -315,12 +315,12 @@ class GithubTestStore {
           )
           .toJson();
 
-      var testSuitePrefix =
+      final testSuitePrefix =
           test.suiteName?.isNotEmpty == true ? '${test.suiteName}/' : '';
 
-      var path = '$actualTestsPath/$testSuitePrefix${test.name}.json';
+      final path = '$actualTestsPath/$testSuitePrefix${test.name}.json';
 
-      var encoder = JsonEncoder.withIndent('  ');
+      final encoder = const JsonEncoder.withIndent('  ');
       await uploadFile(
         data: utf8.encode(encoder.convert(testData)),
         message: 'Updating test',
@@ -349,15 +349,15 @@ class GithubTestStore {
       }
     }
 
-    var url = '/repos/${slug.fullName}/contents/${_encodeGitPath(path)}';
-    var body = json.encode({
+    final url = '/repos/${slug.fullName}/contents/${_encodeGitPath(path)}';
+    final body = json.encode({
       'branch': branch,
       'committer': _committer,
       'content': base64.encode(data),
       'message': message,
       if (sha != null) 'sha': sha
     });
-    var response = await _github.putJSON(
+    final response = await _github.putJSON(
       url,
       body: body,
       headers: {
@@ -385,7 +385,7 @@ class GithubTestStore {
 
   /// Encodes a path to be suitable to send to GitHub's for the content API.
   String _encodeGitPath(String path) {
-    var builder = StringBuffer();
+    final builder = StringBuffer();
 
     for (var i = 0; i < path.length; i++) {
       var ch = path.substring(i, i + 1);

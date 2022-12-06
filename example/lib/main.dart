@@ -53,7 +53,7 @@ void main() async {
     );
   }
 
-  var store = GithubTestStore(
+  final store = GithubTestStore(
     branch: 'tests',
     github: github,
     slug: RepositorySlug(
