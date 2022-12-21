@@ -1,13 +1,13 @@
 name: 'example'
 description: 'Example project for the Automated Testing Framework.'
 publish_to: 'none'
-version: '1.0.0+23'
+version: '1.0.0+24'
 
 environment: 
   sdk: '>=2.18.0 <3.0.0'
 
 dependencies: 
-  automated_testing_framework_example: '^2.2.5'
+  automated_testing_framework_example: '^2.3.1'
   automated_testing_framework_plugin_images: '^4.0.0+26'
   flutter: 
     sdk: 'flutter'
