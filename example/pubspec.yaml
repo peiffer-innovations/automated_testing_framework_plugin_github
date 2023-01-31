@@ -1,42 +1,43 @@
 name: 'example'
 description: 'Example project for the Automated Testing Framework.'
 publish_to: 'none'
-version: '1.0.0+28'
+version: '1.0.0+29'
 
-environment:
+environment: 
   sdk: '>=2.19.0 <4.0.0'
 
-dependencies:
-  automated_testing_framework_example: '^2.3.1'
-  automated_testing_framework_plugin_images: '^4.0.0+30'
-  flutter:
+dependencies: 
+  automated_testing_framework_example: '^2.3.2'
+  automated_testing_framework_plugin_images: '^4.0.1+1'
+  flutter: 
     sdk: 'flutter'
 
-dependency_overrides:
-  automated_testing_framework_plugin_github:
+dependency_overrides: 
+  automated_testing_framework_plugin_github: 
     path: '../'
 
-dev_dependencies:
+
+dev_dependencies: 
   flutter_launcher_icons: '^0.11.0'
-  flutter_test:
+  flutter_test: 
     sdk: 'flutter'
 
-flutter_icons:
+flutter_icons: 
   android: true
   ios: true
   image_path: 'assets-src/icon.png'
 
-flutter_native_splash:
+flutter_native_splash: 
   image: 'assets-src/splash.png'
   color: '212121'
   android_disable_fullscreen: true
 
-flutter:
+flutter: 
   uses-material-design: true
-  assets:
+  assets: 
     - 'assets/secrets/'
 
-ignore_updates:
+ignore_updates: 
   - 'archive'
   - 'async'
   - 'boolean_selector'
