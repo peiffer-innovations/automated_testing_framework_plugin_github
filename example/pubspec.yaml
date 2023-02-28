@@ -1,14 +1,14 @@
 name: 'example'
 description: 'Example project for the Automated Testing Framework.'
 publish_to: 'none'
-version: '1.0.0+31'
+version: '1.0.0+32'
 
 environment: 
   sdk: '>=2.19.0 <4.0.0'
 
 dependencies: 
   automated_testing_framework_example: '^2.3.2'
-  automated_testing_framework_plugin_images: '^4.0.1+4'
+  automated_testing_framework_plugin_images: '^4.0.1+5'
   flutter: 
     sdk: 'flutter'
 
@@ -18,7 +18,7 @@ dependency_overrides:
 
 
 dev_dependencies: 
-  flutter_launcher_icons: '^0.11.0'
+  flutter_launcher_icons: '^0.12.0'
   flutter_test: 
     sdk: 'flutter'
 
