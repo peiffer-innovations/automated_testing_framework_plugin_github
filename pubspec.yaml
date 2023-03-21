@@ -1,7 +1,7 @@
 name: 'automated_testing_framework_plugin_github'
 description: 'Library to use provide github support for test hosting for the Automated Testing Framework.'
 homepage: 'https://github.com/peiffer-innovations/automated_testing_framework_plugin_github'
-version: '2.0.1+7'
+version: '2.0.1+8'
 
 environment: 
   sdk: '>=2.19.0 <4.0.0'
@@ -12,10 +12,10 @@ dependencies:
   flutter: 
     sdk: 'flutter'
   form_validation: '^2.2.0+6'
-  github: '^9.10.1'
-  json_class: '^2.1.6+1'
+  github: '^9.11.0'
+  json_class: '^2.2.0'
   logging: '^1.1.1'
-  pointycastle: '^3.6.2'
+  pointycastle: '^3.7.0'
   static_translations: '^2.1.2+6'
 
 dev_dependencies: 
